@@ -77,7 +77,7 @@ $(document).ready(function() {
         function init() { var mapOptions = { zoom: 11, center: new google.maps.LatLng(40.6700, -73.9400), styles: [{ "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#e9e9e9" }, { "lightness": 17 }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#ffffff" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#ffffff" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 16 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 21 }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#dedede" }, { "lightness": 21 }] }, { "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#ffffff" }, { "lightness": 16 }] }, { "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#333333" }, { "lightness": 40 }] }, { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#f2f2f2" }, { "lightness": 19 }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#fefefe" }, { "lightness": 20 }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#fefefe" }, { "lightness": 17 }, { "weight": 1.2 }] }] }; var mapElement = document.getElementById('map'); var map = new google.maps.Map(mapElement, mapOptions); var marker = new google.maps.Marker({ position: new google.maps.LatLng(40.6700, -73.9400), map: map, title: 'Snazzy!' }); }
     }
     $(document).ready(function() { $('#mc_embed_signup').find('form').ajaxChimp(); });
-    var countDownDate = new Date("feb 15, 2020 15:37:25").getTime();
+    var countDownDate = new Date("feb 16, 2020 15:37:25").getTime();
     var x = setInterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
@@ -85,7 +85,7 @@ $(document).ready(function() {
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("timer").innerHTML = "<div class='start-in'>start in:</div>" + days + "<span>days  </span>: " + hours + "<span>hour</span>: " +
+        document.getElementById("timer").innerHTML = "<div class='start-in'>starts in:</div>" + days + "<span>days  </span>: " + hours + "<span>hours</span>: " +
             minutes + "<span>mins  </span>: " + seconds + "<span>secs  </span>";
         if (distance < 0) {
             clearInterval(x);
