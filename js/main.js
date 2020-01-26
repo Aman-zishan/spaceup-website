@@ -85,7 +85,7 @@ $(document).ready(function() {
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("timer").innerHTML = "<div class='start-in'>starts in:</div>" + days + "<span>days  </span>: " + hours + "<span>hours</span>: " +
+        document.getElementById("timer").innerHTML = "</div>" + days + "<span>days  </span>: " + hours + "<span>hours</span>: " +
             minutes + "<span>mins  </span>: " + seconds + "<span>secs  </span>";
         if (distance < 0) {
             clearInterval(x);
@@ -93,3 +93,31 @@ $(document).ready(function() {
         }
     }, 1000);
 });
+
+
+$(document).ready(function() {
+    $("#myCarousel").on("slide.bs.carousel", function(e) {
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 3;
+      var totalItems = $(".carousel-item").length;
+  
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $(".carousel-item")
+              .eq(i)
+              .appendTo(".carousel-inner");
+          } else {
+            $(".carousel-item")
+              .eq(0)
+              .appendTo($(this).find(".carousel-inner"));
+          }
+        }
+      }
+    });
+  });
+  
+  
